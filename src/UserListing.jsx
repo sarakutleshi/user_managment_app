@@ -1,10 +1,15 @@
 import React, {useState, useEffect} from "react";
 import './App.css'
 
-function App() {
+import { useNavigate } from "react-router-dom";
+
+function UserListing() {
     const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const navigate = useNavigate();
+
 
     useEffect(() => {
         fetch("https://jsonplaceholder.typicode.com/users")
@@ -57,10 +62,10 @@ function App() {
                             <td>{user.email}</td>
                             <td>
                                 <div className="button">
-                                    <button className="btn btn-sm btn-danger" onClick={() => console.log("Delete user", user.id)}>
-                                        <i className="bi bi-trash"></i> Details</button>
-                                    <button className="btn btn-sm btn-danger" onClick={() => console.log("Delete user", user.id)}>
-                                        <i className="bi bi-trash"></i> Edit</button>
+                                    <button className="btn btn-sm btn-primary" onClick={() => navigate(`/users/${user.id}`)}>
+                                        <i className="bi bi-info-circle"></i> Details</button>
+                                    <button className="btn btn-sm btn-warning" onClick={() => console.log("Edit user", user.id)}>
+                                        <i className="bi bi-pencil"></i> Edit</button>
                                     <button className="btn btn-sm btn-danger" onClick={() => console.log("Delete user", user.id)}>
                                         <i className="bi bi-trash"></i> Delete
                                     </button>
@@ -75,6 +80,6 @@ function App() {
     );
 }
 
-export default App;
+export default UserListing;
 
 
