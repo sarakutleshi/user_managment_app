@@ -1,15 +1,12 @@
 import React, {useState, useEffect} from "react";
-import './App.css'
-
 import { useNavigate } from "react-router-dom";
+import './App.css';
 
 function UserListing() {
     const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
-
     const navigate = useNavigate();
-
 
     useEffect(() => {
         fetch("https://jsonplaceholder.typicode.com/users")
@@ -54,22 +51,18 @@ function UserListing() {
                         <th>Action</th>
                     </tr>
                     </thead>
-                    <tbody>{users.map((user) => (
+                    <tbody>
+                    {users.map((user) => (
                         <tr key={user.id}>
                             <td>{user.id}</td>
                             <td>{user.name}</td>
                             <td>{user.username}</td>
                             <td>{user.email}</td>
                             <td>
-                                <div className="button">
-                                    <button className="btn btn-sm btn-primary" onClick={() => navigate(`/users/${user.id}`)}>
-                                        <i className="bi bi-info-circle"></i> Details</button>
-                                    <button className="btn btn-sm btn-warning" onClick={() => console.log("Edit user", user.id)}>
-                                        <i className="bi bi-pencil"></i> Edit</button>
-                                    <button className="btn btn-sm btn-danger" onClick={() => console.log("Delete user", user.id)}>
-                                        <i className="bi bi-trash"></i> Delete
-                                    </button>
-                                </div>
+                                <button className="btn btn-sm btn-primary"
+                                        onClick={() => navigate(`/users/${user.id}`)}>
+                                    Details
+                                </button>
                             </td>
                         </tr>
                     ))}
@@ -81,5 +74,6 @@ function UserListing() {
 }
 
 export default UserListing;
+
 
 
