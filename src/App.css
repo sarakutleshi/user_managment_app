@@ -1,3 +1,14 @@
 .btn{
     margin-left: 10px;
 }
+
+.new-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-content: end;
+    align-items: center;
+    font-size: xx-large;
+    margin-right: 40px;
+    margin-bottom: 50px;
+}
