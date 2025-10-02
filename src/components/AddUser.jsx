@@ -53,7 +53,10 @@ function AddUser({addUser}) {
                     {errors.email && (<small className="text-danger">{errors.email}</small>)}
                 </div>
 
-                <button type="submit" className="btn btn-primary">Add User</button>
+                <button type="submit" className="btn btn-primary mt-3">Add User</button>
+                <button className="btn btn-secondary mt-3"
+                        onClick={() => navigate("/")}>Back to List
+                </button>
             </form>
         </div>
     );
