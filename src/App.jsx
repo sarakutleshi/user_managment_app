@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import UserListing from "./UserListing";
+import UserListing from "./components/UserListing.jsx";
 import UserDetails from "./components/UserDetails.jsx";
 import AddUser from "./components/AddUser.jsx";
 
