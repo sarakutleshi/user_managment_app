@@ -33,17 +33,18 @@ function UserListing({users, isLoading, error}) {
     return (
         <div className="container mt-5">
             <h1 className="text-center mb-4">User List</h1>
+
+            {/*Searching by name*/}
+            <input
+                type="text" className="form-control mb-3"
+                placeholder="Search by name..." value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}/>
+
             <div className="table-responsive shadow-sm rounded">
-                {/*Searching by name*/}
-                <input
-                    type="text" className="form-control mb-3"
-                    placeholder="Search by name..." value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}/>
-
                 {/*Listing Users*/}
-                <table className="table table-hover table-bordered align-middle">
+                <table id="tabel" className="table table-hover table-bordered align-middle">
 
-                    <thead className="table-dark">
+                    <thead>
                     <tr>
                         <th>Id</th>
                         <th>Name</th>
@@ -79,15 +80,13 @@ function UserListing({users, isLoading, error}) {
                         }
                     })()}
                     </tbody>
-
                 </table>
-
-                <div className="new-button mt-3">
-                    <button className="btn btn-sm btn-primary" onClick={() => navigate("/add-user")}>
-                        + Add User
-                    </button>
-                </div>
-
+            </div>
+            {/*Add User Button*/}
+            <div className="new-button mt-3">
+                <button className="btn  btn-primary" onClick={() => navigate("/add-user")}>
+                    + Add User
+                </button>
             </div>
         </div>
     );

@@ -1,6 +1,29 @@
-.btn{
+.btn {
     margin-left: 10px;
+    background-color: #A6171C;
+    border-style: none;
+    font-size: large;
 }
+
+.btn:hover {
+    background-color: #e04147;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5f2e1;
+}
+
+
+.text-center {
+    font-family: "Libertinus Keyboard", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #726209;
+}
+
 
 .new-button {
     display: flex;
@@ -12,3 +35,34 @@
     margin-right: 40px;
     margin-bottom: 50px;
 }
+
+.form-control {
+    border-radius: 25px;
+    background-color: #e3dda8;
+    width: 590px;
+    height: 50px;
+    text-decoration: none;
+    border-style: none;
+}
+
+.form-control:focus {
+    background-color: #c0c0a7;
+    color: black;
+}
+
+.table thead th {
+    background-color: #c4b455;
+    font-family: "Savate", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: bold;
+    color: white;
+    font-size: x-large;
+}
+
+.table tbody {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+}
+
+
